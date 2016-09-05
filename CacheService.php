@@ -70,7 +70,8 @@ if($httpMethod == 'PUT') {
     $logger->info("Response cache file already exists! : ".$file);
   } else {
     $logger->info("Writing file: ".$file);
-    $fileWriteStatus = file_put_contents($file, $rawPutData);
+    # $fileWriteStatus = file_put_contents($file, $rawPutData);
+    exec('/var/www/html/PersistData.sh '.$file.' '.$rawPutData.' >/dev/null 2>/dev/null &');
     if($fileWriteStatus) {
       $logger->info("File written successfully: ".$file);
     } else {
