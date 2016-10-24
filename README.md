@@ -7,13 +7,13 @@ The backend can be configured to use different caching and persistence services.
 ### The service currently supports:
 1. Memcached
 2. Redis
-3. File persistence
+3. File persistence - Asnychronous for high performance.
 
 ## Usage
 
 ### To use this caching service use the format given below:
 
-1. The Request URL format must be http://{host}:{port}/cacheService.php/{KEY_TO_BE_CACHED_OR_PERSISTED}
+1. The HTTP PUT request URL format is: http://{host}:{port}/cacheService.php/{KEY_TO_BE_CACHED_OR_PERSISTED}
 2. Given below is the sample request body for storing a Web Page response into the caching service. 
 
 HTTP PUT Request Body:
