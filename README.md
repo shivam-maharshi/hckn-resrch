@@ -7,7 +7,7 @@ The backend can be configured to use different caching and persistence services.
 ### The service currently supports:
 1. Memcached
 2. Redis
-3. File persistence - Asnychronous for high performance.
+3. File persistence - Asnychronous for high performance using PThreads
 
 ## Usage
 
