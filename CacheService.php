@@ -51,12 +51,21 @@ if($httpMethod == 'PUT') {
       }
     }
 
+  // Split the raw HTTP PUT data into HTTP PUT request headers, HTTP PUT response headers and HTTP PUT response body.
+  $putData = preg_split("#\n\s*\n#Uis", $rawPutData);
+  $putResHeaders = $putData[0];
+  $putResData = '';
+  for ($i = 1; $i < count($putData); $i++) {
+    $putResData .= $putData[$i];
+  }
+
+
   if($cacheAvailable) {
     $logger->debug("Writing PUT request body to cache: ".$rawPutData);
     $newKeyAdded = $cache->add($cacheURL, $rawPutData);
 
     if($newKeyAdded) {
-      $logger->debug("URL adding success: ".$cacheURL);    
+      $logger->debug("URL adding success: ".$cacheURL);
     } else {
       $logger->info("URL already exists: ".$cacheURL);
     }
@@ -67,16 +76,22 @@ if($httpMethod == 'PUT') {
   # Write response to a file.
   $file = ARCHIVE_DIR.$cacheURL.".txt";
   if(file_exists($file)) {
-    $logger->info("Response cache file already exists! : ".$file);
+    #$logger->info("Response cache file already exists! : ".$file);
   } else {
-    $logger->info("Writing file: ".$file);
-    # $fileWriteStatus = file_put_contents($file, $rawPutData);
-    exec('/var/www/html/PersistData.sh '.$file.' '.$rawPutData.' >/dev/null 2>/dev/null &');
-    if($fileWriteStatus) {
+    #$logger->info("Writing file: ".$file);
+    #$fileWriteStatus = file_put_contents($file, $putResData);
+    #$logger->error("PUT RES HEADERS: ".$putResHeaders);
+    #$logger->error("Put RES DATA: ".$putResData);
+    #$logger->error("Put Data Size:".count($putData));
+    #shell_exec('/var/www/html/PersistData.sh '.$file.' '.$putResData.' >/dev/null 2>/dev/null &');
+    $cmd = 'php /var/www/html/persistData.php '.$file.' '.$putResData.' >/dev/null 2>/dev/null &';
+    $logger->error("Command: ".$cmd);
+    exec('php /var/www/html/persistData.php '.$file.' '.$putResData.' >/dev/null 2>/dev/null &');
+    /*if($fileWriteStatus) {
       $logger->info("File written successfully: ".$file);
     } else {
       $logger->error("File writting failed: ".$file);
-    }
+    }*/
   }
 } elseif($httpMethod == 'GET') {
     $logger->info("Fetching cached response for URL from cache: ".$cacheURL);
