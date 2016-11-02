@@ -4,10 +4,10 @@ A PHP Web Service that provides HTTP PUT request body caching.
 ## Supported Services - Caching & Persisted
 
 The backend can be configured to use different caching and persistence services.
-### The service currently supports:
+### The service currently supports storing data in:
 1. Memcached
 2. Redis
-3. File persistence - Asnychronous for high performance using PThreads
+3. Files - Asnychronously for high performance using PThreads.
 
 ## Usage
 
