@@ -1,3 +1,9 @@
+/**
+* Thin client for Memcached operations.
+*
+* @author: shivam.maharshi
+*/
+
 <?php
 
 include '/var/www/html/apache-log4php-2.3.0/src/main/php/Logger.php';
