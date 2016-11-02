@@ -1,8 +1,15 @@
+/**
+* Cache service that reads HTTP PUT Request data and persists it
+* asynchronously into files.
+*
+* @author: shivam.maharshi
+*/
 <?php
 
 error_reporting(E_ALL);
 #include 'MemcacheClient.php';
 include 'RedisClient.php';
+include '/var/www/html/persistData.php';
 #include '/var/www/html/apache-log4php-2.3.0/src/main/php/Logger.php';
 
 define('HOST', '127.0.0.1');
@@ -59,7 +66,6 @@ if($httpMethod == 'PUT') {
     $putResData .= $putData[$i];
   }
 
-
   if($cacheAvailable) {
     $logger->debug("Writing PUT request body to cache: ".$rawPutData);
     $newKeyAdded = $cache->add($cacheURL, $rawPutData);
@@ -78,15 +84,15 @@ if($httpMethod == 'PUT') {
   if(file_exists($file)) {
     #$logger->info("Response cache file already exists! : ".$file);
   } else {
+    // Asynchronously persists data into file.
+    new PersistenceWorker($file, $data)->start();
     #$logger->info("Writing file: ".$file);
     #$fileWriteStatus = file_put_contents($file, $putResData);
     #$logger->error("PUT RES HEADERS: ".$putResHeaders);
     #$logger->error("Put RES DATA: ".$putResData);
     #$logger->error("Put Data Size:".count($putData));
     #shell_exec('/var/www/html/PersistData.sh '.$file.' '.$putResData.' >/dev/null 2>/dev/null &');
-    $cmd = 'php /var/www/html/persistData.php '.$file.' '.$putResData.' >/dev/null 2>/dev/null &';
-    $logger->error("Command: ".$cmd);
-    exec('php /var/www/html/persistData.php '.$file.' '.$putResData.' >/dev/null 2>/dev/null &');
+    #$cmd = 'php /var/www/html/persistData.php '.$file.' '.$putResData.' >/dev/null 2>/dev/null &';
     /*if($fileWriteStatus) {
       $logger->info("File written successfully: ".$file);
     } else {
