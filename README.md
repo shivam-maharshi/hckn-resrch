@@ -1,5 +1,7 @@
-# PHPCachingWebService
-A PHP Web Service that provides HTTP PUT request body caching.
+# CachingService
+A Web Service that provides HTTP PUT request body caching & persistence. Currently implemented in two languages:
+1. PHP - which uses Apache Web Server or NGNIX to run.
+2. Python - which starts a light weight Flask server.
 
 ## Supported Services - Caching & Persisted
 
@@ -7,7 +9,7 @@ The backend can be configured to use different caching and persistence services.
 ### The service currently supports storing data in:
 1. Memcached
 2. Redis
-3. Files - Asnychronously for high performance using PThreads.
+3. Files - Asnychronously for high performance using PThreads in PHP & native threading library in Python.
 
 ## Usage
 
