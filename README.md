@@ -7,8 +7,8 @@ A Web Service that provides HTTP PUT request body caching & persistence. Current
 
 The backend can be configured to use different caching and persistence services.
 ### The service currently supports storing data in:
-1. Memcached
-2. Redis
+1. [Memcached](https://memcached.org/)
+2. [Redis](http://redis.io/)
 3. Files - Asnychronously for high performance using PThreads in PHP & native threading library in Python.
 
 ## Usage
