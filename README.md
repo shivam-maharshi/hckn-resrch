@@ -20,19 +20,19 @@ The backend can be configured to use different caching and persistence services.
 
 HTTP PUT Request Body:
 
-HTTP/1.1 200 OK
-Date: Tue, 30 Aug 2016 15:47:25 GMT
-Server: Apache/2.2.15 (CentOS)
-X-Powered-By: PHP/5.3.3
-X-Content-Type-Options: nosniff
-Content-language: el
-X-UA-Compatible: IE=Edge
-Vary: Accept-Encoding,Cookie
-Expires: Thu, 01 Jan 1970 00:00:00 GMT
-Cache-Control: private, must-revalidate, max-age=0
-Last-Modified: Mon, 21 Mar 2016 01:34:14 GMT
-Connection: close
-Transfer-Encoding: chunked
-Content-Type: text/html; charset=UTF-8
+HTTP/1.1 200 OK<br>
+Date: Tue, 30 Aug 2016 15:47:25 GMT<br>
+Server: Apache/2.2.15 (CentOS)<br>
+X-Powered-By: PHP/5.3.3<br>
+X-Content-Type-Options: nosniff<br>
+Content-language: el<br>
+X-UA-Compatible: IE=Edge<br>
+Vary: Accept-Encoding,Cookie<br>
+Expires: Thu, 01 Jan 1970 00:00:00 GMT<br>
+Cache-Control: private, must-revalidate, max-age=0<br>
+Last-Modified: Mon, 21 Mar 2016 01:34:14 GMT<br>
+Connection: close<br>
+Transfer-Encoding: chunked<br>
+Content-Type: text/html; charset=UTF-8<br>
 
 {HTTP PAGE DATA}
