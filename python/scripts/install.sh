@@ -1,3 +1,6 @@
 pip install Flask
 pip install redis
-yum install mod_wsgi
+#yum -y install mod_wsgi
+yum -y install libevent-devel
+yum -y install python-devel
+pip install gevent
