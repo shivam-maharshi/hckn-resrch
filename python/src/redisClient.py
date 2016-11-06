@@ -11,7 +11,7 @@ class RedisClient(object):
 
     @staticmethod
     def set(key, data):
-        return RedisClient.rc.set(key, data)
+        return RedisClient.rc.setnx(key, data)
 
     @staticmethod
     def get(key):
