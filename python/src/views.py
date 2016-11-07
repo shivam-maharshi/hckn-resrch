@@ -14,10 +14,12 @@ View for all service end points.
 @author: shivam.maharshi
 '''
 
+
 @app.route('/')
 @app.route('/index')
 def index():
     return render_template('index.html', message='The caching service is up and running!')
+
 
 @app.route('/cacheService/<path:pageUrl>', methods=['GET'])
 def get(pageUrl=None):
@@ -26,6 +28,7 @@ def get(pageUrl=None):
         return RedisClient.get(hash.hexdigest()), 200
     except Exception:
         return "Request unsuccessful!", 500;
+
 
 @app.route('/cacheService/<path:pageUrl>', methods=['PUT'])
 def save(pageUrl=None):
@@ -56,7 +59,6 @@ def save(pageUrl=None):
         return "Successfully saved!", 200
     except Exception:
         return "Request unsuccessful!", 500;
-
 
 def fetchHeaderValue(data, header) :
     res = ''
