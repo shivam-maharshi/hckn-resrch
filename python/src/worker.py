@@ -1,5 +1,11 @@
 import threading
 
+'''
+This module holds all asynchronous tasks handler.
+PersistenceWorker asynchronously appends data to the specified file.
+
+@author: shivam.maharshi
+'''
 class PersistenceWorker (threading.Thread):
 
     def __init__(self, filepath, data):
