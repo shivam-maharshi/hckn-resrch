@@ -1,4 +1,6 @@
 import os
+from hashlib import md5
+
 from src import app
 from src.redisClient import RedisClient
 
@@ -16,22 +18,38 @@ View for all service end points.
 def index():
     return render_template('index.html', message='The caching service is up and running!')
 
-@app.route('/cacheService/<path:pageUrl>', methods=['PUT'])
-def cache(pageUrl=None):
+@app.route('/cacheService/<path:pageUrl>', methods=['GET'])
+def get(pageUrl=None):
     try:
-        lineSep = os.linesep
-        data = ''.join(request.data.decode('utf-8')).split(lineSep + lineSep)
-        lastModified = fetchHeaderValue(data[0], "Last-Modified")
-        pageContent = ''
-        i = 1;
-        while i < len(data):
-            pageContent += data[i] + '\n'
-            i = i+1
-
-        RedisClient.set(pageUrl.strip() + lastModified, pageContent)
-        return "Successfully saved!", 200;
+        hash = md5(pageUrl.strip().encode('utf-8'))
+        return RedisClient.get(hash.hexdigest()), 200
     except Exception:
         return "Request unsuccessful!", 500;
+
+@app.route('/cacheService/<path:pageUrl>', methods=['PUT'])
+def save(pageUrl=None):
+    try:
+        lineSep = '\r\n'
+        req = request.environ.get('wsgi.input').readlines()
+        reqData = ''
+        for rd in req:
+            reqData += rd
+        reqData = reqData.decode('utf-8')
+        reqDataSeg = reqData.split(lineSep + lineSep)
+        reqBody = ''
+        i = 2;
+        while i < len(reqDataSeg):
+            reqBody += reqDataSeg[i] + '\n'
+            i = i+1
+
+        import pdb; pdb.set_trace()
+        key = pageUrl.strip() + fetchHeaderValue(reqDataSeg[1], "Last-Modified")
+        hash = md5(key.encode('utf-8'))
+        RedisClient.set(hash.hexdigest(), reqBody)
+        return "Successfully saved!", 200
+    except Exception:
+        return "Request unsuccessful!", 500;
+
 
 def fetchHeaderValue(data, header) :
     res = ''
