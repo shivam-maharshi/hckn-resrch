@@ -3,6 +3,7 @@ from hashlib import md5
 
 from src import app
 from src.redisClient import RedisClient
+from src.worker import PersistenceWorker
 
 from flask.templating import render_template
 from flask import request
