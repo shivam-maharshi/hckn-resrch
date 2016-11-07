@@ -42,10 +42,16 @@ def save(pageUrl=None):
             reqBody += reqDataSeg[i] + '\n'
             i = i+1
 
-        import pdb; pdb.set_trace()
         key = pageUrl.strip() + fetchHeaderValue(reqDataSeg[1], "Last-Modified")
         hash = md5(key.encode('utf-8'))
-        RedisClient.set(hash.hexdigest(), reqBody)
+        #import pdb; pdb.set_trace()
+        if not RedisClient.exists(hash.hexdigest()):
+            # Asynchronously persist data in file.
+            worker = PersistenceWorker(ARCHIVE_FILE, reqBody)
+            worker.start()
+            RedisClient.set(hash.hexdigest(), reqBody)
+        else:
+            print("Page already exists!")
         return "Successfully saved!", 200
     except Exception:
         return "Request unsuccessful!", 500;
