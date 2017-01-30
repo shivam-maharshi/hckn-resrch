@@ -10,13 +10,13 @@ Given below is a list of projects in this repository.
 
 ### [2. MediaWiki Benchmark] (https://github.com/shivam-maharshi/hckn-resrch/tree/master/mw-benchmark) 
 This project contains all the code and configurations to install, optimize and benchmark a Wikipedia server with realistic workload. Wikipedia, empowered by MediaWiki, can be used to assess and compare the performance of different:
-
-a. Web Servers - Apache, LightHTTP, NGNIX, etc.
-b. Web Server Modules  - Apache MPM, Preform, Event, etc.
-c. Databases - MySQL, Postgress, TSQL, SQLLite, etc.
-d. Caches - Accel, Memcached, Redis, etc.
-e. Archiving - SiteStory, Cache Based Archiving, etc.
-
+<dl>
+<dd> a. Web Servers - Apache, LightHTTP, NGNIX, etc. </dd>
+<dd> b. Web Server Modules  - Apache MPM, Preform, Event, etc. </dd>
+<dd> c. Databases - MySQL, Postgress, TSQL, SQLLite, etc. </dd>
+<dd> d. Caches - Accel, Memcached, Redis, etc. </dd>
+<dd> e. Archiving - SiteStory, Cache Based Archiving, etc. </dd>
+</dl>
 ### [3. MediaWiki Docker] (https://github.com/shivam-maharshi/hckn-resrch/tree/master/mw-docker)
 
 ### [4. MediaWiki Import] (https://github.com/shivam-maharshi/hckn-resrch/tree/master/mw-import)
