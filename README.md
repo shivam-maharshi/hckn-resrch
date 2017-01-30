@@ -6,20 +6,20 @@ This is a compilation of a few novel research ideas, innovative projects, hackat
 ## [Contents] (https://github.com/shivam-maharshi/hckn-resrch)
 Given below is a list of projects in this repository.
 
-### 1. [Cache Web Service] (https://github.com/shivam-maharshi/hckn-resrch/tree/master/cache-ws)
+### [1. Cache Web Service] (https://github.com/shivam-maharshi/hckn-resrch/tree/master/cache-ws)
 
-### 2. [MediaWiki Benchmark] (https://github.com/shivam-maharshi/hckn-resrch/tree/master/mw-benchmark) 
+### [2. MediaWiki Benchmark] (https://github.com/shivam-maharshi/hckn-resrch/tree/master/mw-benchmark) 
 This project contains all the code and configurations to install, optimize and benchmark a Wikipedia server with realistic workload. Wikipedia, empowered by MediaWiki, can be used to assess and compare the performance of different:
 
-1. Web Servers - Apache, LightHTTP, NGNIX, etc.
-2. Web Server Modules  - Apache MPM, Preform, Event, etc.
-3. Databases - MySQL, Postgress, TSQL, SQLLite, etc.
-4. Caches - Accel, Memcached, Redis, etc.
-5. Archiving - SiteStory, Cache Based Archiving, etc.
+a. Web Servers - Apache, LightHTTP, NGNIX, etc.
+b. Web Server Modules  - Apache MPM, Preform, Event, etc.
+c. Databases - MySQL, Postgress, TSQL, SQLLite, etc.
+d. Caches - Accel, Memcached, Redis, etc.
+e. Archiving - SiteStory, Cache Based Archiving, etc.
 
-### 3. [MediaWiki Docker] (https://github.com/shivam-maharshi/hckn-resrch/tree/master/mw-docker)
+### [3. MediaWiki Docker] (https://github.com/shivam-maharshi/hckn-resrch/tree/master/mw-docker)
 
-### 4. [MediaWiki Import] (https://github.com/shivam-maharshi/hckn-resrch/tree/master/mw-import)
+### [4. MediaWiki Import] (https://github.com/shivam-maharshi/hckn-resrch/tree/master/mw-import)
 
 ## [Todo] (https://github.com/shivam-maharshi/hckn-resrch)
 https://lord.io/blog/2014/travis-multiple-subdirs/
