@@ -8,13 +8,15 @@ Given below is a list of projects in this repository.
 
 ### [1. Cache Web Service] (https://github.com/shivam-maharshi/hckn-resrch/tree/master/cache-ws)
 This project contains web services that provides HTTP PUT request body in-memory caching & persistence on file system. Currently two type of web services are available in two languages:<br><br>
-a. _**PHP**_ - Implemented in PHP, this web service uses Apache web server or NGNIX to run.<br>
-b. _**Python**_ - Implemented in Python, this web service is capable of using Apache web server or can start its own light weight Flask server.
+<dl>
+<dt> a. PHP - Implemented in PHP, this web service uses Apache web server or NGNIX to run. </dt>
+<dt> b. Python - Implemented in Python, this web service is capable of using Apache web server or can start its own light weight Flask server. </dt>
+</dl>
 
 ### [2. MediaWiki Benchmark] (https://github.com/shivam-maharshi/hckn-resrch/tree/master/mw-benchmark) 
 This project contains all the code and configurations to install, optimize and benchmark a Wikipedia server with realistic workload. Wikipedia, empowered by MediaWiki, can be used to assess and compare the performance of different:
 <dl>
-<dd> a. **Web Servers** - Apache, LightHTTP, NGNIX, etc. </dd>
+<dt> a. Web Servers - Apache, LightHTTP, NGNIX, etc. </dt>
 <dd> b. Web Server Modules  - Apache MPM, Preform, Event, etc. </dd>
 <dd> c. Databases - MySQL, Postgress, TSQL, SQLLite, etc. </dd>
 <dd> d. Caches - Accel, Memcached, Redis, etc. </dd>
