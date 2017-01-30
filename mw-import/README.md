@@ -1,2 +1,2 @@
-# MediaWikiImport
-A multit hreaded Java project to import MediaWiki XML dumps into MediaWiki backend database.
+# MediaWiki Import
+A multithreaded Java project to import MediaWiki XML dumps into MediaWiki backend database.
