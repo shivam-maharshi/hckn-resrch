@@ -1,0 +1,3 @@
+[submodule "mw-benchmark"]
+	path = mw-benchmark
+	url = https://github.com/shivam-maharshi/mw-benchmark
