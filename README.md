@@ -13,7 +13,7 @@ This project contains web services that provides HTTP PUT request body in-memory
 <dd> b. Python - Implemented in Python, this web service is capable of using Apache web server or can start its own light weight Flask server. </dd>
 </dl>
 
-### [2. MediaWiki Benchmark] (https://github.com/shivam-maharshi/hckn-resrch/tree/master/mw-benchmark) 
+### [2. MediaWiki Benchmark] (https://github.com/shivam-maharshi/mw-benchmark) 
 This project contains all the code and configurations to install, optimize and benchmark a Wikipedia server with realistic workload. Wikipedia, empowered by MediaWiki, can be used to assess and compare the performance of different:
 <dl>
 <dd> a. Web Servers - Apache, LightHTTP, NGNIX, etc. </dd>
