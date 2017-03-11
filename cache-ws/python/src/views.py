@@ -1,4 +1,6 @@
 import os
+import logging
+logging.basicConfig(filename='/var/www/html/debug.log', level=logging.DEBUG)
 from hashlib import md5
 
 from src import app
@@ -34,7 +36,9 @@ def get(pageUrl=None):
 def save(pageUrl=None):
     try:
         lineSep = '\r\n'
-        req = request.environ.get('wsgi.input').readlines()
+        #req = request.environ.get('wsgi.input').readlines()
+        req = request.environ.get('wsgi.input').read()
+        req = unicode(req, errors='ignore')
         reqData = ''
         for rd in req:
             reqData += rd
@@ -58,6 +62,7 @@ def save(pageUrl=None):
             print("Page already exists!")
         return "Successfully saved!", 200
     except Exception:
+        logging.debug(e)
         return "Request unsuccessful!", 500;
 
 def fetchHeaderValue(data, header) :
