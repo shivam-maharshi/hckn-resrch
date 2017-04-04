@@ -1,4 +1,5 @@
 # Disable SELinux
+yum -y install python-pip
 pip install Flask
 pip install redis
 yum -y install mod_wsgi
