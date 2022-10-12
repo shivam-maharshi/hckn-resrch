@@ -26,6 +26,3 @@ This project contains all the code and configurations to install, optimize and b
 ### [3. MediaWiki Docker](https://github.com/shivam-maharshi/hckn-resrch/tree/master/mw-docker)
 
 ### [4. MediaWiki Import](https://github.com/shivam-maharshi/hckn-resrch/tree/master/mw-import)
-
-## [Todo](https://github.com/shivam-maharshi/hckn-resrch)
-https://lord.io/blog/2014/travis-multiple-subdirs/
